@@ -17,5 +17,4 @@ val module = module {
         HomeViewModel(androidApplication(), get())
     }
 
-
 }

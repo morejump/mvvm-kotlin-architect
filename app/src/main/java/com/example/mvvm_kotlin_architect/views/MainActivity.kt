@@ -17,11 +17,14 @@ class MainActivity : BaseActivity<HomeViewModel>() {
     }
 
     override fun getLayoutId(): Int = R.layout.activity_main
+
     override fun observeData() {
-        txtDummyText.text = mViewModel.giveHelloString()
+        mViewModel.data = "this data has been changed in MainActivity"
     }
 
     override fun initViews() {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.fragmentContainer, MainFragment())
+        fragmentTransaction.commit()
     }
-
 }
